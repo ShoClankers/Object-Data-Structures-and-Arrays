@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tinu's Information</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px 0;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Tinu's Information Storage</h2>
+
+    <button onclick="showInfo()">Show Tinu's Info</button>
+    <button onclick="showColors()">Show Favourite Colours</button>
+
+    <div id="output"></div>
+
+    <script>
+        // Object to store Tinu's information
+        const tinu = {
+            name: "Tinu",
+            age: 16,
+            city: "Delhi"
+        };
+
+        // Array to store favourite colours
+        const favouriteColors = ["Blue", "Pink", "Purple", "Green"];
+
+        // Function using arguments object
+        function displayData() {
+            let result = "";
+            for (let i = 0; i < arguments.length; i++) {
+                result += arguments[i] + "<br>";
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        // Access object data
+        function showInfo() {
+            displayData(
+                "Name: " + tinu.name,
+                "Age: " + tinu.age,
+                "City: " + tinu.city
+            );
+        }
+
+        // Access array data
+        function showColors() {
+            displayData(
+                "Favourite Colours:",
+                favouriteColors.join(", ")
+            );
+        }
+    </script>
+
+</body>
+
+</html>
